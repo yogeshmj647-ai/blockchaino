@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rootline — Verifiable Organic Traceability</title>
+<meta name="description" content="A blockchain-based traceability network for organic growers, processors, and the communities who eat what they grow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">Rootline</a>
+    <nav class="main-nav">
+      <a href="#how-it-works">How it works</a>
+      <a href="#trace">Trace a product</a>
+      <a href="#views">Who sees what</a>
+      <a href="#members">For growers</a>
+      <a href="#join" class="nav-cta">Join the network</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">A traceability network for organic food</p>
+        <h1>An organic label is a promise.<br>Rootline is the proof.</h1>
+        <p class="hero-sub">Every batch gets a digital record the moment it leaves the field. Anyone — a shopper, a retailer, an inspector — can trace it back, in seconds, without asking anyone to take their word for it.</p>
+        <div class="hero-actions">
+          <a href="#trace" class="btn btn-primary">Trace a product</a>
+          <a href="#members" class="btn btn-ghost">I'm a grower</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 360 420" class="hero-svg">
+          <path d="M40 380 C 80 320, 60 260, 110 220 C 160 180, 150 120, 200 80 C 230 55, 260 45, 300 40"
+                fill="none" stroke="#22432F" stroke-width="2.5" stroke-dasharray="6 8" opacity="0.5"/>
+          <circle cx="40" cy="380" r="7" fill="#4A3728"/>
+          <circle cx="110" cy="220" r="7" fill="#4A3728"/>
+          <circle cx="200" cy="80" r="7" fill="#C1652B"/>
+          <circle cx="300" cy="40" r="9" fill="#22432F"/>
+          <text x="55" y="386" class="svg-label">Farm</text>
+          <text x="122" y="226" class="svg-label">Processor</text>
+          <text x="212" y="86" class="svg-label">Distributor</text>
+          <text x="238" y="46" class="svg-label">Shelf</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="wrap">
+      <h2>The trouble with "organic"</h2>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h3>Label abuse</h3>
+          <p>Organic stamps get treated as a marketing sticker rather than a verified claim, and shoppers have no easy way to tell the difference.</p>
+        </div>
+        <div class="problem-card">
+          <h3>Broken transparency</h3>
+          <p>Tracking a product by hand across farms, processors, and trucks is slow and full of gaps — and gaps are where fraud lives.</p>
+        </div>
+        <div class="problem-card">
+          <h3>Lost credibility</h3>
+          <p>When certification can't be checked, honest growers pay the price alongside the ones cutting corners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how-it-works">
+    <div class="wrap">
+      <h2>How the record gets built</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Tag it at the source</h3>
+            <p>Each batch gets a digital identifier the moment it's harvested — no separate paperwork, no re-entry later.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Record every handoff</h3>
+            <p>Farm, processor, distributor, retailer — each transfer is written to a shared ledger no single party can quietly edit.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Let anyone verify it</h3>
+            <p>A shopper scans a code. A regulator pulls the full history. Each sees exactly the layer of detail meant for them.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="stack-grid">
+        <div class="stack-item">
+          <h4>Blockchain</h4>
+          <p>The shared, tamper-evident ledger every handoff is written to.</p>
+        </div>
+        <div class="stack-item">
+          <h4>IoT sensors</h4>
+          <p>Temperature, humidity, and location, captured automatically in transit.</p>
+        </div>
+        <div class="stack-item">
+          <h4>AI / ML</h4>
+          <p>Flags unusual patterns in the chain before they become a recall.</p>
+        </div>
+        <div class="stack-item">
+          <h4>QR / RFID</h4>
+          <p>The physical tag that connects a real product to its digital record.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TRACE DEMO -->
+  <section class="trace" id="trace">
+    <div class="wrap">
+      <h2>Trace a product</h2>
+      <p class="section-sub">Pick a batch and scan it to see what a shopper would see.</p>
+
+      <div class="trace-panel">
+        <div class="trace-picker">
+          <label for="batch-select">Choose a product</label>
+          <select id="batch-select"></select>
+          <button id="scan-btn" class="btn btn-primary">Scan code</button>
+        </div>
+
+        <div id="scan-result" class="scan-result" hidden>
+          <div class="result-head">
+            <h3 id="result-title"></h3>
+            <span class="cert-badge" id="cert-badge">Certified Organic</span>
+          </div>
+          <ol class="path" id="result-path"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLE-BASED VIEWS -->
+  <section class="views" id="views">
+    <div class="wrap">
+      <h2>Who sees what</h2>
+      <p class="section-sub">Not everyone needs the same depth of detail — and not every detail should be public.</p>
+
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" role="tab" aria-selected="true" data-tab="consumer">Consumer</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="retailer">Retailer</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="regulator">Regulator</button>
+      </div>
+
+      <div class="tab-panels">
+        <div class="tab-panel is-active" data-panel="consumer">
+          <h3>Origin and certification</h3>
+          <p>Where a product came from, when it was harvested, and whether its organic certification is current — nothing more, nothing hidden.</p>
+        </div>
+        <div class="tab-panel" data-panel="retailer">
+          <h3>Batch, logistics, and compliance</h3>
+          <p>Full batch numbers, cold-chain data, delivery windows, and compliance documentation for every shipment received.</p>
+        </div>
+        <div class="tab-panel" data-panel="regulator">
+          <h3>The complete ledger</h3>
+          <p>Every recorded transaction across the network, timestamped and unaltered — the full chain of custody for audits and recalls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR MEMBERS -->
+  <section class="members" id="members">
+    <div class="wrap members-grid">
+      <div>
+        <h2>Bring your farm onto the ledger</h2>
+        <p>Joining Rootline means every batch you send out carries proof of where it came from — without extra bookkeeping.</p>
+        <ul class="checklist">
+          <li>Get a digital tag issued for each harvest batch</li>
+          <li>Your certification is verified once and stays attached to your record</li>
+          <li>Buyers and shoppers can confirm your organic status without calling you</li>
+        </ul>
+      </div>
+      <div class="member-card">
+        <h3>What you'll need</h3>
+        <p>Current organic certification, a way to print or apply tags at packing, and about twenty minutes to register your farm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN / CONTACT -->
+  <section class="join" id="join">
+    <div class="wrap join-grid">
+      <div>
+        <h2>Ready to make your record public?</h2>
+        <p>Tell us a little about your farm, co-op, or retail operation and we'll follow up about onboarding.</p>
+      </div>
+      <form class="join-form" id="join-form">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          I'm a…
+          <select name="role">
+            <option>Grower / farm</option>
+            <option>Processor</option>
+            <option>Retailer</option>
+            <option>Consumer / interested party</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary">Send</button>
+        <p class="form-note" id="form-note" hidden>Thanks — we'll be in touch.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>Rootline — verifiable organic traceability</span>
+    <span class="footer-note">Prototype for demonstration purposes</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
